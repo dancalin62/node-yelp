@@ -18,15 +18,18 @@ Node.js module for interfacing with [Yelp](http://www.yelp.com)'s API v2.0
     });
 
     // See http://www.yelp.com/developers/documentation/v2/search_api
-    yelp.search({term: "food", location: "Montreal"}, function(error, data) {
-      console.log(error);
-      console.log(data);
+    yelp.search({term: "food", location: "Montreal"}).then(function(data) {
+      console.log('data', data);
+    }, function(error) {
+      console.log('error', error);
     });
 
+
     // See http://www.yelp.com/developers/documentation/v2/business
-    yelp.business("yelp-san-francisco", function(error, data) {
-      console.log(error);
-      console.log(data);
+    yelp.business("yelp-san-francisco").then(function(data) {
+      console.log('data', data);
+    }, function(error) {
+      console.log('error', error);
     });
     
 # References #
